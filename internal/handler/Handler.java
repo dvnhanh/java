@@ -82,7 +82,7 @@ public class Handler {
                         ArrayList<Student> arrayList = new ArrayList<Student>(); 
                         // TODO: Write code to call the function and show array list to console
                         // Reference:
-                        // 1. You have avariable arrayList in the line number 74
+                        // 1. You have avariable arrayList in the line number 82
                         // 2. Determine the function that has parameters and pass them to the funtion getStudentsList(Arraylist<Student>)
                         System.out.println("Success");
                         break;
@@ -120,7 +120,7 @@ public class Handler {
                     default:
                         System.out.println("6: Export student list to file txt");
                         ExportStudents("./export_data.txt");
-                        
+
                         System.out.println("Existed!");
                         break;
                 }
