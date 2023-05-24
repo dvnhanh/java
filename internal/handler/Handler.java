@@ -29,6 +29,7 @@ public class Handler {
         Float stduScore;
         String stduNote;
         String stduImagePath;
+        String filePath;
         Scanner in = new Scanner(System.in).useDelimiter("\n");
 
         try{
@@ -102,16 +103,24 @@ public class Handler {
                         break;
                     case 5:
                         System.out.println("5: Import student list to file txt");
-                        String filePath;
                         System.out.print("Enter file path: ");
                         filePath = in.next();
                         importStudents(filePath);
+
+                        System.out.println("Success");
                         break;
                     case 6:
                         System.out.println("6: Export student list to file txt");
+                        System.out.print("Enter file path: ");
+                        filePath = in.next();
                         ExportStudents("./export_data.txt");
+
+                        System.out.println("Success");
                         break;
                     default:
+                        System.out.println("6: Export student list to file txt");
+                        ExportStudents("./export_data.txt");
+                        
                         System.out.println("Existed!");
                         break;
                 }

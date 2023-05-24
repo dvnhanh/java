@@ -4,7 +4,7 @@ import internal.infracstructure.datastore.binary.StudentRepo;
 
 public class Main {
   public static void main(String[] args) {
-    StudentRepo stuRepo = new StudentRepo("./data_student.ser");
+    StudentRepo stuRepo = new StudentRepo("./data_student.bin");
     StudentService stdSvc = new StudentService(stuRepo);
     Handler handler = new Handler(stdSvc);
     
