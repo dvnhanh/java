@@ -38,14 +38,25 @@ public class StudentRepo {
         System.out.println("Connected");
     }
 
-    public Student getStudentByCode(Integer stuCode) {
+    public Student getStudentByCode(int stuCode) {
         ArrayList<Student> arrStd = new ArrayList<Student>();
         getStudentsList(arrStd);
 
-        // TODO: Get student via stuCode
-        // 1: Declare student
-        // 2: Loop array and check stuCode of object studebt math with parameter stuCode
-        // 3: If exists, pass student in array list to new student that you just declare and return it, else return null
+        Student std = new Student();
+
+        for (Student stdL : arrStd) {
+            if (std.getterStuCode() == stuCode) {
+                std.setterStuCode(stdL.getterStuCode());
+                std.setterStuName(stdL.getterStuName());
+                std.setterStuScore(stdL.getterStuScore());
+                std.setterStuAddress(stdL.getterStuAddress());
+                std.setterStuImagPath(stdL.getterStuImagByte());
+                
+                return std;
+            }
+        }
+        
+        
         return null;
     }
 
@@ -77,10 +88,18 @@ public class StudentRepo {
     public NewError updateStudent(Student stu) {
         ArrayList<Student> arrStd = new ArrayList<Student>();
         getStudentsList(arrStd);
-        // TODO: Write code to update student
-        // 1: You have parameter stu have datatype is Student
-        // 2: Loop array and check stuCode of student in the array list math with parameter student (use stdCode to compare)
-        // 3: If exists, replace it
+
+        for (Student stdL : arrStd) {
+            if (stdL.getterStuCode() == stu.getterStuCode()) {
+                stdL.setterStuCode(stdL.getterStuCode());
+                stdL.setterStuName(stdL.getterStuName());
+                stdL.setterStuScore(stdL.getterStuScore());
+                stdL.setterStuAddress(stdL.getterStuAddress());
+                stdL.setterStuImagPath(stdL.getterStuImagByte());
+                
+                return null;
+            }
+        }
 
         return null;
     }

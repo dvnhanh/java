@@ -24,6 +24,8 @@ public class Handler {
 
     public void Begin() {
         int feature = 0;
+        Student stdu = new Student();
+        int stduCode;
         String stduAddress;
         String stduName;
         Float stduScore;
@@ -65,8 +67,6 @@ public class Handler {
                         System.out.print("Image path: ");
                         stduImagePath = in.next();
                     
-
-                        Student stdu = new Student();
                         stdu.setterStuCode(generatorStuCode());
                         stdu.setterStuAddress(stduAddress);
                         stdu.setterStuName(stduName);
@@ -80,25 +80,54 @@ public class Handler {
                     case 2:
                         System.out.println("2: Get list students");
                         ArrayList<Student> arrayList = new ArrayList<Student>(); 
-                        // TODO: Write code to call the function and show array list to console
-                        // Reference:
-                        // 1. You have avariable arrayList in the line number 82
-                        // 2. Determine the function that has parameters and pass them to the funtion getStudentsList(Arraylist<Student>)
+                        getStudentsList(arrayList);
+                        for (Student std : arrayList) {
+                            System.out.printf("Student code: %d", std.getterStuCode());
+                            System.out.printf("Student name: %s", std.getterStuName());
+                            System.out.printf("Student Score: %f", std.getterStuScore());
+                            System.out.printf("Student Address: %s", std.getterStuAddress());
+                            System.out.printf("Student Note: %s", std.getterStuNote());
+                            System.out.printf("Student image path: %s", std.getterStuImagByte());
+                        }
                         System.out.println("Success");
                         break;
                     case 3:
-                        // TODO: Write code to call the function updateStudent (check below)
-                        // 1. Declare new object student
-                        // 2. In the object student have funtion setter, you need to use the function it to set attribute for object
-                        // 3. Determine the function, parameter of the function and call it.
+                        System.out.println("1: Update student");
+                            
+                        System.out.print("Code: ");
+                        stduCode = in.nextInt();
+
+                        System.out.print("Name: ");
+                        stduName = in.next();
+
+                        System.out.print("Score: ");
+                        stduScore = in.nextFloat();
+
+                        System.out.print("Address: ");
+                        stduAddress = in.next();
+
+                        System.out.print("Note: ");
+                        stduNote = in.next();
+
+                        System.out.print("Image path: ");
+                        stduImagePath = in.next();
+                        
+                        stdu.setterStuCode(stduCode);
+                        stdu.setterStuAddress(stduAddress);
+                        stdu.setterStuName(stduName);
+                        stdu.setterStuImagPath(stduImagePath);
+                        stdu.setterStuScore(stduScore);
+                        stdu.setterStuNote(stduNote);
+
+                        updateStudent(stdu);
+                        
                         System.out.println("Success");
                         break;
                     case 4:
                         System.out.println("4: Delete Student");
-
-                        // TODO: Write code to call the function deleteStudent (check below)
-                        // 1. In the object student have funtion setter, you need to use the function it to set attribute for object
-                        // 2. Determine the function, parameter of the function and call it.
+                        System.out.print("Code: ");
+                        stduCode = in.nextInt();
+                        
                         System.out.println("Success");
                         break;
                     case 5:
