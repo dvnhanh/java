@@ -42,20 +42,11 @@ public class StudentRepo {
         ArrayList<Student> arrStd = new ArrayList<Student>();
         getStudentsList(arrStd);
 
-        Student std = new Student();
-
         for (Student stdL : arrStd) {
-            if (std.getterStuCode() == stuCode) {
-                std.setterStuCode(stdL.getterStuCode());
-                std.setterStuName(stdL.getterStuName());
-                std.setterStuScore(stdL.getterStuScore());
-                std.setterStuAddress(stdL.getterStuAddress());
-                std.setterStuImagPath(stdL.getterStuImagByte());
-                
-                return std;
+            if (stdL.getterStuCode() == stuCode) {
+                return stdL;
             }
         }
-        
         
         return null;
     }
@@ -89,13 +80,9 @@ public class StudentRepo {
         ArrayList<Student> arrStd = new ArrayList<Student>();
         getStudentsList(arrStd);
 
-        for (Student stdL : arrStd) {
-            if (stdL.getterStuCode() == stu.getterStuCode()) {
-                stdL.setterStuCode(stdL.getterStuCode());
-                stdL.setterStuName(stdL.getterStuName());
-                stdL.setterStuScore(stdL.getterStuScore());
-                stdL.setterStuAddress(stdL.getterStuAddress());
-                stdL.setterStuImagPath(stdL.getterStuImagByte());
+        for (int i = 0; i < arrStd.size(); i++) {
+            if (arrStd.get(i).getterStuCode() == stu.getterStuCode()) {
+                arrStd.set(i, stu);
                 
                 return null;
             }

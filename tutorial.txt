@@ -1,0 +1,8 @@
+Nếu máy thực thi được makefile
+ - Để build: make build-java
+ - Để thực thi chương trình: make run-java
+Không hỗ trợ makefile
+ - cd vào thư mục góc (src)
+ - Thực thi lần lượt 2 command:
+    + javac -d . Main.java
+	+ java Main
